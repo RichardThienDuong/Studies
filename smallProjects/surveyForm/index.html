@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Survey Form</title>
+  <meta charet="UTC-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+<head>
+<body>
+  <div class="title">
+    <h1 id="title">Hisuby Survey Form</h1>
+    <p id="description"><em>Thanks for everything that you do! Please fill this out to help us help you!</em></p></div>
+  <div class="form">
+    <form id="survey-form">
+        <label for="name" id="name-label">Name<br><input type="text" id="name" placeholder="Enter Your Name" required /></label>
+        <label for="email" id="email-label">Email<br><input type="email" id="email" placeholder="Enter Your Email" required /></label>
+        <label for="age" id="age-label">Age<span class="optional"> (optional)</span><br><input type="number" id="number" min="2" max="150" placeholder="Age" /></label>
+        <label for="number" id="number-label"> Rate Your Expierence! <br> 
+        <div class="checkboxes">
+          <span><input name="ratings" type="radio" class="rate" value="Amazing" checked >Amazing</span><br>
+          <span><input name="ratings" type="radio" class="rate" value="Good" >Good</span><br>
+          <span><input name="ratings" type="radio" class="rate" value="Okay" ></span>Okay<br>
+          <span><input name="ratings" type="radio" class="rate" value="Not_Good" ></span>Not Good<br>
+          <span><input name="ratings" type="radio" class="rate" value="Terrible" >Terrible</span>
+        </div>
+        </label>
+      <label for="dropdown">Where did you hear from us? <br>
+      <select id="dropdown" >
+        <option disabled selected value >Select an option</option>
+        <option value="youtube">Youtube</option>
+        <option value="Twitter">Twitter</option>
+        <option value="Television">Television</option>
+        <option value="Online_ads">Online Ads</option>
+        <option value="Employee">Employee</option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select>
+      </label>
+      <label for="courses">Which donation did you do?<br>
+      <div class=checkboxes>
+      <input type="checkbox" name="donations" value="Beginner">Medical Package</input><br>
+      <input type="checkbox" name="donations" value="Beginner">Health Package</input><br>
+      <input type="checkbox"  name="donations" value="Beginner">Educational Package</input><br>
+      <input type="checkbox"  name="donations" value="Beginner">General Package</input><br>
+      </label>
+      </div><br>
+      <label class="checkboxes" for="describe">Any Comments or Suggestions?<br><textarea id="textarea" placeholder="Enter in your comments here."></textarea></label>
+      <button type="submit" id="submit" class="submit-button">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
