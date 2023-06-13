@@ -54,5 +54,51 @@ const createManyPeople = (arrayOfPeople, done) => {
     });
   };
 
-
+  const findEditThenSave = (personId, done) => {
+    const foodToAdd = "hamburger";
+  Person.findById({_id: personId}, function(err, data){
+    data.favoriteFoods.push(foodToAdd);
+    data.save(function(err, updatedPerson) {
+      if(err) return console.error(err);
+      done(null, data);
+    });
+  });
+  };
+  
+  const findAndUpdate = (personName, done) => {
+    const ageToSet = 20;
+    Person.findOneAndUpdate({name: personName}, { age : ageToSet }, { new: true }, function(err, data) {
+      if(err) return console.error(err);
+      done(null, data);
+    });
+  
+  };
+  
+  const removeById = (personId, done) => {
+    Person.findByIdAndRemove({_id: personId}, function(err, data){
+      if(err) return console.error(err);
+      done(null, data);
+    });
+  };
+  
+  const removeManyPeople = (done) => {
+    const nameToRemove = "Mary";
+    Person.remove({name: nameToRemove}, function(err, data){
+      if(err) return console.error(err);
+      done(null, data);
+    });
+  };
+  
+  const queryChain = (done) => {
+    const foodToSearch = "burrito";
+    Person.find({favoriteFoods: foodToSearch})
+          .sort({name: 1})
+          .limit(2)
+          .select({age: 0})
+          .exec(function(err, data) {
+      if(err) return console.error(err);
+      done(null, data);
+    
+    });
+  };
 
