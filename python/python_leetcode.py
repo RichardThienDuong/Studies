@@ -535,3 +535,187 @@ class Solution: # 14.3mb
     
 #####################################################################################################
 
+# Given an input string s, reverse the order of the words.
+# A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.
+# Return a string of the words in reverse order concatenated by a single space.
+# Note that s may contain leading or trailing spaces or multiple spaces between two words. The returned string should only have a single space separating the words. Do not include any extra spaces.
+
+# my conclusion 
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        return " ".join(s.split()[::-1])
+    
+# TheLegend27
+class Solution: # 19ms
+    def reverseWords(self, s: str) -> str:
+
+        temp=s.split()
+        temp.reverse()
+        ans=' '.join(temp)
+        return ans
+    
+class Solution: # 16.3mb
+    def reverseWords(self, s: str) -> str:
+        s.strip()
+        l=s.split()
+        l=l[::-1]
+        return(' '.join(l))
+    
+############################################################################################
+
+# Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+# The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+# You must write an algorithm that runs in O(n) time and without using the division operation.
+
+# helped conclusion 
+class Solution: # 248ms 25.7mb
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        prefix_product = [1] * n 
+        suffix_product = [1] * n
+        result = [0] * n
+
+        for i in range(1, n):
+            prefix_product[i] = prefix_product[i - 1] * nums[i - 1]
+        for i in range(n - 2, -1, -1):
+            suffix_product[i] = suffix_product[i + 1] * nums[i + 1]
+        for i in range(n):
+            result[i] = prefix_product[i] * suffix_product[i]
+        return result
+    
+# TheLegend27
+sys.stdout = open('user.out', 'w') # 116ms
+
+for nums in map(loads, stdin):
+    l, r, n = 1, 1, len(nums) - 1
+    output = [1] * len(nums)
+
+    for i, j in zip(range(n), range(n, 0, -1)):
+        l *= nums[i]; r *= nums[j]
+        output[i + 1] *= l;
+        output[j - 1] *= r
+
+    print(f'[{",".join(map(str, output))}]')
+
+exit()
+
+class Solution: # 20.5mb
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+
+        prefix_mul = nums.copy()
+        for i in range(1, len(nums)):
+            prefix_mul[i] = prefix_mul[i - 1] * prefix_mul[i]
+
+        for i in range(len(nums) - 2, -1, -1):
+            nums[i] = nums[i + 1] * nums[i]
+
+        for i in range(len(nums)):
+            m1 = prefix_mul[i - 1] if i > 0 else 1
+            m2 = nums[i + 1] if i < len(nums) - 1 else 1
+            nums[i] = m1 * m2 
+        return nums
+    
+######################################################################################
+    
+# Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+# Notice that the solution set must not contain duplicate triplets.
+
+# my helped conclusion 
+class Solution: # 1510ms 
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        n = len(nums)
+        triplets = []
+
+        for i in range(n - 2):
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+
+            left = i + 1
+            right = n - 1
+
+            while left < right:
+                total = nums[i] + nums[left] + nums[right]
+                if total < 0:
+                    left += 1
+                elif total > 0:
+                    right -= 1
+                else:
+                    triplets.append([nums[i], nums[left], nums[right]])
+
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+
+                    left += 1
+                    right -= 1
+
+        return triplets
+
+# TheLegend27
+def three_sum(nums): # 222ms
+    counts = Counter(nums)
+    result = [[0, 0, 0]] if counts[0] >= 3 else []
+    nums = [n for n in sorted(counts) if n != 0]
+    if not nums or nums[0] > 0 or nums[-1] < 0:
+        return result
+
+    if counts[0] >= 1:
+        for n in nums:
+            if n >= 0:
+                break
+            if -n in counts:
+                result.append([n, 0, -n])
+    
+    for n in nums:
+        if n & 1:
+            continue
+        remaining = -n >> 1
+        if counts[remaining] >= 2:
+            result.append([n, remaining, remaining])
+    
+    for i, n in enumerate(nums):
+        kk = -(nums[0] + n)
+        if kk < n:
+            break
+        j = bisect_right(nums, -n << 1) if n < 0 else i + 1
+        k = bisect_right(nums, kk)
+        for right in nums[j:k]:
+            left = -(n + right)
+            if left in counts:
+                result.append([left, n, right])
+    return result
+
+open('user.out', 'w').write("".join(str(three_sum(loads(line))) + "\n" for line in stdin))
+exit()
+
+from bisect import bisect_left
+
+class Solution: # 17.3mb
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums = sorted(nums)
+        triplets = []
+        prev_n1 = None
+        for i, n1 in enumerate(nums[:-2]):
+            if n1 == prev_n1:
+                continue
+            prev_n2 = None
+            lo, hi = i + 1, len(nums) - 1
+            while lo < hi:
+                n2, n3 = nums[lo], nums[hi]
+                if n1 + n2 + n3 < 0:
+                    lo += 1
+                elif n1 + n2 + n3 > 0:
+                    hi -= 1
+                else:
+                    if n2 != prev_n2:
+                        triplets.append((n1, n2, n3))
+                        prev_n2 = n2
+                    lo += 1
+                    hi -= 1
+            prev_n1 = n1
+        return triplets
+    
+##########################################################################################
+
