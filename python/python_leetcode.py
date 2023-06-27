@@ -719,3 +719,82 @@ class Solution: # 17.3mb
     
 ##########################################################################################
 
+# Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
+
+# my conclusion 
+class Solution: # 2404ms & 32.7mb
+    def increasingTriplet(self, nums: List[int]) -> bool:
+        num = nums
+        while len(num) > 2 :
+            i = num[0]
+            sortNum = sorted(list(set(num)), reverse=True)
+            if len(sortNum) < 3 :
+                return False
+            if i == sortNum[0] or i == sortNum[1] :
+                num = num[1:]
+                continue
+            tempNum = [i] + [x for x in num if x > i] 
+
+            j = 1
+            k = len(tempNum) - 1
+
+            while i >= tempNum[j] or tempNum[j] >= tempNum[k] :
+                if j == k :
+                    break
+                for m in range(1, k) :
+                    if i < tempNum[j] and tempNum[j] < tempNum[k] :
+                        return True
+                    j += 1
+
+                k -= 1
+                j = 1
+            if i < tempNum[j] and tempNum[j] < tempNum[k] :
+                return True
+
+            num = num[1:]
+
+        return False
+    
+# TheLegend27
+class Solution: # 982ms
+    def increasingTriplet(self, nums: List[int]) -> bool:
+        first, second = sys.maxsize, sys.maxsize
+        for num in nums:
+            if num <= first:
+                first = num
+            elif num <=second:
+                second = num
+            else:
+                return True
+        return False
+    
+from bisect import bisect_right, bisect_left
+class Solution: # 30mb 
+    def increasingTriplet(self, nums: List[int]) -> bool:
+        n = len(nums)
+        # max_heap = []
+        stack = []
+        for i in range(n):
+            """ IDEA: 
+            if not stack:
+                stack.append(nums[i])
+            else:
+                idx = bisect_right(stack, nums[i])
+                if idx < len(stack):
+                    stack[idx] = nums[i]
+                else:
+                    stack.append(nums[i])
+            """
+            
+            # ReArrange the IDEA into a neat code
+            # idx = bisect_right(stack, nums[i])    # BUGGG! at [1,1,1,1,1,1]
+            idx = bisect_left(stack, nums[i])       # FIX!!!
+            if idx >= len(stack):       # p.s. bisect_left([], 7) outputs 0
+                stack.append(nums[i])
+            else:
+                stack[idx] = nums[i]
+        return len(stack) >= 3
+    
+    
+################################################################################################
+
