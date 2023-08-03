@@ -858,3 +858,34 @@ class Solution:
         return i
     
 #################################################################################################
+
+# 283. Move Zeroes
+# Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+# Note that you must do this in-place without making a copy of the array.
+
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        for i in range(len(nums)) : 
+            backwardsi = len(nums) - 1 - i
+            if nums[backwardsi] == 0 :
+                for iteration in range(len(nums) - (len(nums)-i)) :
+                    if nums[backwardsi+1] : 
+                        if nums[backwardsi+1] != 0 : 
+                            bucket = nums[backwardsi+1]
+                            nums[backwardsi+1] = 0
+                            nums[backwardsi] = bucket 
+                            backwardsi += 1
+         
+
+
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+# bucket appoach 
+# move all zeros to front and keep order
+# loop for whole array 
+# if zero then move left til can't 
+# have bucket to hold 
+
+#####################################################################################################
+
