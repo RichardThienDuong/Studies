@@ -889,3 +889,37 @@ class Solution:
 
 #####################################################################################################
 
+# Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+# A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the 
+# characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        if s == "" :
+            return True
+        elif t == "" : 
+            return False
+        tpointer1 = 0
+        tpointer2 = len(t) - 1
+        spointer1 = 0
+        spointer2 = len(s) - 1
+        while tpointer1 <= tpointer2 :
+            if s[spointer1] == t[tpointer1] : 
+                tpointer1 += 1
+                spointer1 += 1
+            elif s[spointer2] == t[tpointer2] :
+                tpointer2 -= 1
+                spointer2 -= 1
+            else :
+                tpointer1 += 1
+                tpointer2 -= 1
+        if spointer1 > spointer2 : 
+            return True
+        else :
+            return False
+
+
+## FIRST TWO POINTERS SOLUTION !!! :)
+
+########################################################################################################
+
