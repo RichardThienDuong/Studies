@@ -951,3 +951,28 @@ class Solution:
         return count
     
 ################################################################################################################
+
+# You are given an integer array nums consisting of n elements, and an integer k.
+
+# Find a contiguous subarray whose length is equal to k that has the maximum average value and return this value. Any answer with a calculation error less than 10-5 will be accepted.
+
+class Solution:
+    def findMaxAverage(self, nums: List[int], k: int) -> float:
+        
+        currRunSum = 0
+        maxAvg = None
+
+        for i in range(len(nums)) : 
+
+            currRunSum += nums[i]
+            if i >= k-1 : # window size = k 
+                currAvg = round(float(currRunSum / k), 5)
+                if maxAvg == None : 
+                    maxAvg = currAvg
+                
+                maxAvg = max(maxAvg, currAvg)
+                currRunSum -= nums[i - (k - 1)] 
+        
+        return maxAvg
+    
+##################################################################################################################
