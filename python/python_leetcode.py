@@ -986,17 +986,16 @@ class Solution:
 
         vowels = ['a', 'e', 'i', 'o', 'u']
         currNumVs = 0
-        currStr = ''
+        start = 0
         maxNumVs = 0
         for windowEnd in range(len(s)) : 
             if s[windowEnd] in vowels : 
                 currNumVs += 1
-            currStr += s[windowEnd]
-            if windowEnd >= (k - 1) : 
                 maxNumVs = max(maxNumVs, currNumVs)
-                if currStr[0] in vowels : 
+            if windowEnd >= (k - 1) : 
+                if s[start] in vowels : 
                     currNumVs -= 1
-                currStr = currStr[1:]
+                start += 1
 
         return maxNumVs
 
