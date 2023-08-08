@@ -1012,33 +1012,18 @@ class Solution:
 class Solution:
     def longestOnes(self, nums: List[int], k: int) -> int:
 
-        curr = 0
-        maxNum = 0
-        zeroes = 0
         left = 0
-        replacements = k
-        
         for right in range(len(nums)) : 
-            if nums[right] == 1 : 
-                curr += 1
-                print("1 : ", curr, nums[right], replacements)
 
-            elif nums[right] == 0 and k > 0 : 
-                zeroes += 1
-                if replacements == 0 and zeroes > 0 : 
-                    left += 1
-                    zeroes -= 1
-                    replacements += 1
-                    print("replace : ", curr, nums[right], replacements)
-                elif replacements == 0 : 
-                    curr = 1
-                    replacements = k - 1
-                    print("replace : ", curr, nums[right], replacements)
-                else : 
-                    replacements -= 1
-                    curr +=1
-                    print("0 : ", curr, nums[right], replacements)
-            maxNum = max(maxNum, curr)
-        return maxNum 
+            if nums[right] == 0 : ## if zero minus placement
+                k -= 1
+            
+            if k < 0 : ## if placements empty
+                if nums[left] == 0: ## if left is zero 
+                    k += 1  ## placements + 1
+
+                left += 1 # left + 1 when k empty 
+            
+        return right - left + 1  
     
 ################################################################################################################
