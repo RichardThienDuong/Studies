@@ -1006,3 +1006,39 @@ class Solution:
 # for loop w/ if 
 
 ########################################################################################################################
+
+# Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array if you can flip at most k 0's.
+
+class Solution:
+    def longestOnes(self, nums: List[int], k: int) -> int:
+
+        curr = 0
+        maxNum = 0
+        zeroes = 0
+        left = 0
+        replacements = k
+        
+        for right in range(len(nums)) : 
+            if nums[right] == 1 : 
+                curr += 1
+                print("1 : ", curr, nums[right], replacements)
+
+            elif nums[right] == 0 and k > 0 : 
+                zeroes += 1
+                if replacements == 0 and zeroes > 0 : 
+                    left += 1
+                    zeroes -= 1
+                    replacements += 1
+                    print("replace : ", curr, nums[right], replacements)
+                elif replacements == 0 : 
+                    curr = 1
+                    replacements = k - 1
+                    print("replace : ", curr, nums[right], replacements)
+                else : 
+                    replacements -= 1
+                    curr +=1
+                    print("0 : ", curr, nums[right], replacements)
+            maxNum = max(maxNum, curr)
+        return maxNum 
+    
+################################################################################################################
