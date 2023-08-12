@@ -1097,3 +1097,30 @@ class Solution:
             
 ##################################################################################################################
 
+# Given two 0-indexed integer arrays nums1 and nums2, return a list answer of size 2 where:
+
+# answer[0] is a list of all distinct integers in nums1 which are not present in nums2.
+# answer[1] is a list of all distinct integers in nums2 which are not present in nums1.
+# Note that the integers in the lists may be returned in any order.
+
+from collections import defaultdict
+
+class Solution:
+    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
+        mydict = defaultdict(list)
+        mydict["nums1"]
+        mydict["nums2"]
+        
+        maxLength = len(nums1) if len(nums1) > len(nums2) else len(nums2)
+
+        for i in range(maxLength) : 
+            if i < len(nums1) :
+                if nums1[i] not in nums2 and nums1[i] not in mydict["nums1"]: 
+                    mydict["nums1"].append(nums1[i])
+            if i < len(nums2) :
+                if nums2[i] not in nums1 and nums2[i] not in mydict["nums2"] : 
+                    mydict["nums2"].append(nums2[i])
+        
+        return [mydict["nums1"], mydict["nums2"]]
+    
+################################################################################################################
