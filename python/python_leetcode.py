@@ -1124,3 +1124,27 @@ class Solution:
         return [mydict["nums1"], mydict["nums2"]]
     
 ################################################################################################################
+
+# Given an array of integers arr, return true if the number of occurrences of each value in the array is unique or false otherwise.
+
+from collections import defaultdict
+
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        d = defaultdict(int)
+
+        for i in arr : 
+            if d[str(i)] : 
+                d[str(i)] += 1
+            else : 
+                d[str(i)] = 1
+        # print(d)
+        array = []
+        for key, value in d.items() : 
+            array.append(value)
+
+        # print(array)
+        return True if len(set(array)) == len(array) else False
+    
+###############################################################################################################
+
