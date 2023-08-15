@@ -1187,3 +1187,30 @@ class Solution:
 
 #############################################################################################################
 
+# Given a 0-indexed n x n integer matrix grid, return the number of pairs (ri, cj) such that row ri and column cj are equal.
+
+# A row and column pair is considered equal if they contain the same elements in the same order (i.e., an equal array).
+
+from typing import List
+class Solution:
+    def equalPairs(self, grid: List[List[int]]) -> int:
+        d = {}
+        count = 0
+
+        for i in range(len(grid)) :
+            array = []
+            for j in grid :
+                array.append(j[i])
+            if tuple(array) in d : 
+                d[tuple(array)] += 1
+            else :
+                d[tuple(array)] = 1
+        print(d)
+        for i in grid :
+            if tuple(i) in d : 
+                count += d[tuple(i)]
+
+        return count
+    
+#################################################################################################################
+
