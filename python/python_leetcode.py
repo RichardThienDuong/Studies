@@ -1260,3 +1260,45 @@ class Solution:
     
 ###############################################################################################################
 
+# Given an array of integers arr, return true if and only if it is a valid mountain array.
+
+# Recall that arr is a mountain array if and only if:
+
+# arr.length >= 3
+# There exists some i with 0 < i < arr.length - 1 such that:
+# arr[0] < arr[1] < ... < arr[i - 1] < arr[i] 
+# arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
+
+class Solution:
+    def validMountainArray(self, arr: List[int]) -> bool:
+        if len(arr) < 3  or arr[0] > arr[1] : 
+            return False
+        for i in range(1, len(arr)) : 
+            if arr[i] == arr[i-1] : 
+                return False
+            elif arr[i] < arr[i-1] : 
+                for j in range(i, len(arr)) : 
+                    if arr[j] >= arr[j-1] : 
+                        return False
+                return True
+
+#########################################################################################################
+
+# Given an array arr, replace every element in that array with the greatest element among the elements to its right, and replace the last element with -1.
+
+# After doing so, return the array.
+
+class Solution:
+    def replaceElements(self, arr: List[int]) -> List[int]:
+        i = len(arr) - 2
+        big = arr[len(arr) - 1]
+        while i > -1 : 
+            temp = arr[i]
+            arr[i] = big
+            if big < temp : 
+                big = temp
+            i-=1
+        arr[len(arr) - 1] = -1 
+        return arr
+
+#######################################################################################################
