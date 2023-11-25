@@ -1,0 +1,58 @@
+/* 
+Dark Navy : #363062
+Marine gray : #435585
+light marine : #818FB4
+bache : #F5E8C7
+*/
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #F5E8C7;
+}
+
+/* Mobile devices */
+@media (max-width: 480px) { 
+
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+/* Small Laptops */
+@media (min-width: 769px) and (max-width: 1024px) { 
+
+}
+
+/* Desktops */
+@media (min-width: 1025px) { 
+
+}
+
+.everything {
+    /* enables the use of Flexbox propteries */
+    display: flex;
+    /* flows the direction of the items by columns than rows */
+    flex-direction: column;
+    /* Centers the flex items inside horizontally  */
+    justify-content: center;
+    /* Centers the flex items inside vertically  */
+    align-items: center;
+    /* ensures the items in flex container has enough space responsively */
+    height: 100vh;
+}
+
+.calculator {
+    width: 50%;
+    background-color: #363062;
+    height: 40%;
+}
+
+.author {
+    width: 50%;
+    height: 20%;
+    text-align: center;
+}
