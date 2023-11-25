@@ -36,7 +36,7 @@ html, body {
     /* enables the use of Flexbox propteries */
     display: flex;
     /* flows the direction of the items by columns than rows */
-    flex-direction: column;
+    flex-direction: row;
     /* Centers the flex items inside horizontally  */
     justify-content: center;
     /* Centers the flex items inside vertically  */
@@ -45,14 +45,43 @@ html, body {
     height: 100vh;
 }
 
-.calculator {
-    width: 50%;
+.info-box {
+    width: 25%;
+    height: 80%;
     background-color: #363062;
-    height: 40%;
+    margin: 0% 3% 0% 3%;
+    border-radius: 10px;
+}
+
+.history-box {
+    width: 25%;
+    height: 80%;
+    background-color: #363062;
+    margin: 0% 3% 0% 3%;
+    border-radius: 10px;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    background-color: #F5E8C7;
+    margin: 0% 3% 0% 3%;
+}
+
+.calculator {
+    width: 334px;
+    background-color: #363062;
+    height: 394px;
+    border-radius: 10px;
 }
 
 .author {
-    width: 50%;
-    height: 20%;
+    width: 334px;
+    height: 44px;
     text-align: center;
+    margin-top: 10px;
 }
