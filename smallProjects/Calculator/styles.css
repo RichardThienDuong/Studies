@@ -72,7 +72,7 @@ html, body {
     margin: 0% 3% 0% 3%;
 }
 
-.calculator {
+.calculator-box {
     width: 334px;
     background-color: #363062;
     height: 394px;
@@ -85,3 +85,4 @@ html, body {
     text-align: center;
     margin-top: 10px;
 }
+
