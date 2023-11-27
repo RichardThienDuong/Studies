@@ -1346,3 +1346,17 @@ class Solution:
         
 ###########################################################################
 
+# Sort Array By Parity
+
+class Solution:
+    def sortArrayByParity(self, nums: List[int]) -> List[int]:
+        arrEven = []
+        arrOdd = []
+        for i in nums : 
+            if i % 2 == 0 : 
+                arrEven.append(i)
+            else : 
+                arrOdd.append(i)
+        return arrEven + arrOdd
+    
+###########################################################################

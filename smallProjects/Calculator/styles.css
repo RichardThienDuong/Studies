@@ -1,15 +1,16 @@
-/* 
-Dark Navy : #363062
-Marine gray : #435585
-light marine : #818FB4
-bache : #F5E8C7
-*/
+
+:root {
+    --gen-color: #435585;
+    --bg-color: #F5E8C7;
+    --semi-bg-color: #363062;
+    --hype-color: #818FB4; 
+}
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #F5E8C7;
+    background-color: var(--bg-color);
 }
 
 /* Mobile devices */
@@ -48,7 +49,7 @@ html, body {
 .info-box {
     width: 25%;
     height: 80%;
-    background-color: #363062;
+    background-color: var(--semi-bg-color);
     margin: 0% 3% 0% 3%;
     border-radius: 10px;
 }
@@ -56,7 +57,7 @@ html, body {
 .history-box {
     width: 25%;
     height: 80%;
-    background-color: #363062;
+    background-color: var(--semi-bg-color);
     margin: 0% 3% 0% 3%;
     border-radius: 10px;
 }
@@ -68,15 +69,18 @@ html, body {
     align-items: center;
     width: 25%;
     height: 100%;
-    background-color: #F5E8C7;
+    background-color: var(--bg-color);
     margin: 0% 3% 0% 3%;
 }
 
 .calculator-box {
+    display:flex;
+    flex-direction: column;
     width: 334px;
-    background-color: #363062;
+    background-color: var(--semi-bg-color);
     height: 394px;
     border-radius: 10px;
+    padding: 5px;
 }
 
 .author {
@@ -86,3 +90,26 @@ html, body {
     margin-top: 10px;
 }
 
+.formula-screen {
+    height: 20px;
+    width: 320px;
+}
+
+.output-screen {
+    height: 35px;
+    width:320px;
+}
+
+#divide, #multiply, #add, #minus, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #period {
+    height: 65px;
+}
+
+#divide, #multiply, #add, #minus, #zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #period {
+    width: 80px;
+}
+
+#clear-button {
+    width: 160px;
+    background-color: var(--gen-color);
+
+}
