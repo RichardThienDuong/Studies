@@ -75,7 +75,10 @@ html, body {
 
 .calculator-box {
     display:flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
     width: 334px;
     background-color: var(--semi-bg-color);
     height: 394px;
@@ -100,16 +103,19 @@ html, body {
     width:320px;
 }
 
-#divide, #multiply, #add, #minus, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #period {
+.button {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(25% - 10px);
+    /* flex: 1 1 auto; */ /* This allows the button to grow and skrink */
     height: 65px;
+    width: 24%;
 }
 
-#divide, #multiply, #add, #minus, #zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #period {
-    width: 80px;
+.button.long {
+    width: 49.4%;
 }
 
-#clear-button {
-    width: 160px;
-    background-color: var(--gen-color);
-
+.button.tall {
+    height: 134px;
 }
