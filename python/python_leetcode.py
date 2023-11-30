@@ -1393,3 +1393,29 @@ class Solution:
         return k
     
 #########################################################################
+
+# Third Maximum Number
+
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        arr = [nums[0]]
+        i = 1
+        while i < len(nums) : 
+            if nums[i] not in arr : 
+                for j in range(len(arr)) : 
+                    if nums[i] < arr[j] : 
+                        arr.insert(j, nums[i])
+                        break
+                    if j == (len(arr) - 1) : 
+                        arr.append(nums[i])
+            i+=1
+        
+        if len(arr) >= 3 : 
+            return arr[len(arr) - 3]
+        elif len(arr) == 2 : 
+            return arr[1] if arr[1] > arr[0] else arr[0]
+        else : 
+            return arr[0]
+
+###############################################################
+

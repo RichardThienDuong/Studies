@@ -11,6 +11,8 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
+    font-family: 'Orbitron', sans-serif;
+    color: var(--semi-bg-color)
 }
 
 /* Mobile devices */
@@ -83,6 +85,7 @@ html, body {
     height: 394px;
     border-radius: 10px;
     padding: 5px;
+    color: white;
 }
 
 .author {
@@ -90,15 +93,11 @@ html, body {
     height: 44px;
     text-align: center;
     margin-top: 10px;
-}
-
-.formula-screen {
-    height: 20px;
-    width: 320px;
+    font-size: 20px;
 }
 
 .output-screen {
-    height: 35px;
+    height: 70px;
     width:320px;
 }
 
@@ -127,6 +126,10 @@ html, body {
 .button {
     height: 65px;
     width: 100%;
+    color: white;
+    background-color: var(--hype-color);
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .button.long {
@@ -135,4 +138,8 @@ html, body {
 
 .button.tall {
     height: 200%;
+}
+
+#clear-button, .button.tall { 
+    background-color: var(--gen-color)
 }
