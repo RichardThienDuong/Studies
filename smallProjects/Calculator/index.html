@@ -1,11 +1,14 @@
 <!-- Project #1 : Extensive Calculator -->
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, inital-scale=1.0">
-    <title>Hisuby's Calculator</title>
-    <link href="styles.css" type="text/css" rel="stylesheet">
+<!DOCTYPE html> <!-- sets the html's version to html5 -->
+<html> <!-- html content will go in here (pretty much everything)-->
+<head> <!-- -->
+    <!-- Head Basics -->
+    <meta charset="utf-8"> <!-- html will go by UTF-8 characters set -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0"> <!-- Makes viewport (which will be used later in css) responsive to what ever the window is set to -->
+    <title>Hisuby's Calculator</title> <!-- setting title for displaying the name at the top of the tab -->
+    <link href="styles.css" type="text/css" rel="stylesheet"> <!-- links the css code to html page -->
+    <script src="index.js" defer></script><!-- Connects our javascript code , the "defer" will wait until html page loads up first before loading javascript -->
+
     <!-- Font Connector -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,28 +22,28 @@
     <div class="main-box" >
         <div class="calculator-box" >
 
-            <div class="output-screen">Output</div>
+            <div id="output-screen">Output</div>
             <div class="buttons">
                 <button id="clear-button" class="button long rowOne">AC</button>
-                <button class="button rowOne">/</button>
-                <button class="button rowOne">X</button>
-                <button class="button rowTwo">7</button>
-                <button class="button rowTwo">8</button>
-                <button class="button rowTwo">9</button>
-                <button class="button rowTwo">+</button>
-                <button class="button rowThree">4</button>
-                <button class="button rowThree">5</button>
-                <button class="button rowThree">6</button>
-                <button class="button rowThree">-</button>
-                <button class="button rowFour">1</button>
-                <button class="button rowFour">2</button>
-                <button class="button rowFour">3</button>
-                <button class="button tall rowFour">=</button>
-                <button class="button long rowFive">0</button>
-                <button class="button rowFive">.</button>
+                <button id="divide" class="button rowOne">/</button>
+                <button id="multiply" class="button rowOne">X</button>
+                <button id="seven" class="button rowTwo">7</button>
+                <button id="eight" class="button rowTwo">8</button>
+                <button id="nine" class="button rowTwo">9</button>
+                <button id="add" class="button rowTwo">+</button>
+                <button id="four" class="button rowThree">4</button>
+                <button id="five" class="button rowThree">5</button>
+                <button id="six" class="button rowThree">6</button>
+                <button id="minus" class="button rowThree">-</button>
+                <button id="one" class="button rowFour">1</button>
+                <button id="two" class="button rowFour">2</button>
+                <button id="three" class="button rowFour">3</button>
+                <button id="equal" class="button tall rowFour">=</button>
+                <button id="zero" class="button long rowFive">0</button>
+                <button id="decimal" class="button rowFive">.</button>
             </div>
         </div>
-        <div class="author" >
+        <div id="author" >
             Designed and Coded by Richard Duong
         </div>
     </div>

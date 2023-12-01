@@ -88,7 +88,7 @@ html, body {
     color: white;
 }
 
-.author {
+#author {
     width: 334px;
     height: 44px;
     text-align: center;
@@ -96,7 +96,7 @@ html, body {
     font-size: 20px;
 }
 
-.output-screen {
+#output-screen {
     height: 70px;
     width:320px;
 }
