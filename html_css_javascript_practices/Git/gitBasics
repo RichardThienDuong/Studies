@@ -1,0 +1,6 @@
+git add file , will add file to commit 
+git commit -m "I swear I will ALWAYS add a great message for my commits" , add a message with commit
+git push , will push the commit to the git bank
+git log  , will give you git history of commits 
+git status , will give status of current commit being worked on 
+git clone, point to an existing repo and make a clone or copy of that repo in a new directory , at another location. 

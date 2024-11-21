@@ -1,0 +1,5 @@
+Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to use JavaScript to write command-line tools and for server-side scripting-running to produce dynamic web page content before the page is sent to the user's web browser. Node.js lets developers use JS on the server. Node.js comes with a built-in package manager, npm, which makes it easy to manage project dependencies. 
+Node.js is a platform that allows Javascript to run on a server.
+
+Express.js is a minimal, unopinionated web application framework for Node.js. It simplifies many aspects of using Node.js directly for web server creation, such as routing, middleware configuration, and sending responses. Express makes it easier to organize your application into an MVC architecture (Model, View, Controller), though it doesn't force you to do so. It also integreates well with many other libraries and tools and has a large and active community, making it a popular choice for developing web applications with Node.js 
+Express.js is a framework build on Node.js to simpify many aspects of web application development, such as routing and handling HTTP requests. 

@@ -1,0 +1,5 @@
+MongoDB is the database system itself,
+Mongoose is a library that provides a simpler and more structed way to interact with MongoDB in Node.js applications. It provides a straightforward, schema-based solution to model your application data with mongo, which includes built-in type casting, validation, query building, and business logic hooks , among other features.
+MongoDB can be used without Mongoose, but not vice versa , The combinastion of MongoDB and Mongoose is a very popular in the Node.js ecosystem because it provides a comprehensive and easy-to-use slution for managing data in MongoDB.
+
+Schemas are building blocks for Models. They can be nested to create complex models, Each schema maps to a MongoDB collection. It defines the shape of the documents within that collection. 
