@@ -73,4 +73,8 @@ function big_o_nn(n) {
     return count;
 }
 
-late
+var createHelloWorld = function() {
+    return function(...args) {
+        return "Hello World";
+    }
+};
