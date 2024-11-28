@@ -78,3 +78,10 @@ var createHelloWorld = function() {
         return "Hello World";
     }
 };
+
+var createCounter = function(n) {
+    
+    return function() {
+        return n++;
+    };
+};
