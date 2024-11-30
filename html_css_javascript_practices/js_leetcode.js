@@ -85,3 +85,18 @@ var createCounter = function(n) {
         return n++;
     };
 };
+
+var expect = function(expectedValue) {
+    return {
+        toBe: function(actualValue) {
+            if (expectedValue === actualValue) {
+            return true;
+            } else { return false, error: "Not Equal" }
+        },
+        notToBe: function(actualValue) {
+            if (expectedValue !== actualValue) {
+                return true;
+            } else { return false, error: "Equal"; }
+        }
+    }
+};
