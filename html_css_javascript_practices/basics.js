@@ -146,3 +146,22 @@ function my_average_mark(param_1) {
     return average.toFixed(1);
 };
 
+
+var threeSumClosest = function(nums, target) {
+    let a = nums[0];
+    let b = nums[1];
+    let c = nums[2];
+    let sum = a + b + c;
+
+    for( i=3; i<=nums.length; i++ ){
+        let diff = target - sum;
+        if(diff == 0){ return sum; } // checks if already good 
+        else if(diff < 0 && nums[i] >= 0){  // checks if difference is smaller so nums[i] can add more to it
+            if (diff > nums[i]){
+                if((nums[i]+b+c) ) {}
+            }
+        } else {
+
+        }
+    }
+};
