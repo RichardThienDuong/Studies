@@ -1,0 +1,8 @@
+ls for files in directory
+ls -l for files and file size and date created and name 
+cmod permisions with read (r), write (w), execute (x) this file will be  r--r-xr-x so 455
+cd to change directory 
+touch to create file 
+mkdir to create folder
+echo is to voice something , echo "content" > file ,  will put content in file named file
+cat filename will print in the terminal what that file contains without needing to open it .

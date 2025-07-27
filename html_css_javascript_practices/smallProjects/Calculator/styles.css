@@ -1,0 +1,145 @@
+
+:root {
+    --gen-color: #435585;
+    --bg-color: #F5E8C7;
+    --semi-bg-color: #363062;
+    --hype-color: #818FB4; 
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    font-family: 'Orbitron', sans-serif;
+    color: var(--semi-bg-color)
+}
+
+/* Mobile devices */
+@media (max-width: 480px) { 
+
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+/* Small Laptops */
+@media (min-width: 769px) and (max-width: 1024px) { 
+
+}
+
+/* Desktops */
+@media (min-width: 1025px) { 
+
+}
+
+.everything {
+    /* enables the use of Flexbox propteries */
+    display: flex;
+    /* flows the direction of the items by columns than rows */
+    flex-direction: row;
+    /* Centers the flex items inside horizontally  */
+    justify-content: center;
+    /* Centers the flex items inside vertically  */
+    align-items: center;
+    /* ensures the items in flex container has enough space responsively */
+    height: 100vh;
+}
+
+.info-box {
+    width: 25%;
+    height: 80%;
+    background-color: var(--semi-bg-color);
+    margin: 0% 3% 0% 3%;
+    border-radius: 10px;
+}
+
+.history-box {
+    width: 25%;
+    height: 80%;
+    background-color: var(--semi-bg-color);
+    margin: 0% 3% 0% 3%;
+    border-radius: 10px;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    background-color: var(--bg-color);
+    margin: 0% 3% 0% 3%;
+}
+
+.calculator-box {
+    display:flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 334px;
+    background-color: var(--semi-bg-color);
+    height: 394px;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+}
+
+#author {
+    width: 334px;
+    height: 44px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+#output-screen {
+    height: 70px;
+    width:320px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.rowOne {
+    grid-row: 1;
+}
+.rowTwo {
+    grid-row: 2;
+}
+.rowThree {
+    grid-row: 3;
+}
+.rowFour {
+    grid-row: 4;
+}
+.rowFive {
+    grid-row: 5;
+}
+
+.button {
+    height: 65px;
+    width: 100%;
+    color: white;
+    background-color: var(--hype-color);
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.button.long {
+    grid-column: span 2;
+}
+
+.button.tall {
+    height: 200%;
+}
+
+#clear-button, .button.tall { 
+    background-color: var(--gen-color)
+}
