@@ -1,7 +1,6 @@
 function my_first_script() {
     console.log("Hello World!")
 }
-my_first_script();
 
 // let text = "";
 // for (let i = 1; i < 4; i++) {
@@ -21,11 +20,11 @@ my_first_script();
 //  'extra_argument1',
 //  'extra_argument2',
 //  '3' "
-index = 2;
-while (index < process.argv.length) {
-    console.log(process.argv[index]);
-    index += 1;
-}
+// index = 2;
+// while (index < process.argv.length) {
+//     console.log(process.argv[index]);
+//     index += 1;
+// }
 
 function my_is_negative(n) {
     if (n >= 0) {
@@ -81,19 +80,16 @@ function my_string_index(param_1, param_2) {
 // else n is not letter then go to next letter 
 // else return value -1
 };
-my_string_index(param_1, param_2);
 
 param_1 = "ABC"
 function my_downcase(param_1) {
 return (param_1.toLowerCase());
 };
-my_downcase(param_1);
 
 param_1 = "aBc"
 function my_size(param_1) {
 return (param_1.length);
 };
-my_size(param_1);
 
 param_1 = ["blah1", "blah2", "blah3"]
 function my_each(param_1) {
@@ -148,20 +144,24 @@ function my_average_mark(param_1) {
 
 
 var threeSumClosest = function(nums, target) {
-    let a = nums[0];
-    let b = nums[1];
-    let c = nums[2];
-    let sum = a + b + c;
+    nums.sort((a,b) => a - b); 
+    let finalSum = nums[0] + nums[1] + nums[2]; 
 
-    for( i=3; i<=nums.length; i++ ){
-        let diff = target - sum;
-        if(diff == 0){ return sum; } // checks if already good 
-        else if(diff < 0 && nums[i] >= 0){  // checks if difference is smaller so nums[i] can add more to it
-            if (diff > nums[i]){
-                if((nums[i]+b+c) ) {}
+    for (let i=0; i < nums.length -2; i++){ 
+        let left = i + 1, right = nums.length - 1; 
+
+        while (left < right) { 
+            let sum = nums[i] + nums[left] + nums[right]; 
+
+            if(Math.abs(target - sum) < Math.abs(target - finalSum)) { 
+                finalSum = sum; 
             }
-        } else {
 
+            if (sum === target) return target; 
+            else if (sum < target) left++; 
+            else right--;
         }
     }
+
+    return finalSum;
 };
