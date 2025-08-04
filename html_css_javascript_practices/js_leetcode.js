@@ -91,12 +91,12 @@ var expect = function(expectedValue) {
         toBe: function(actualValue) {
             if (expectedValue === actualValue) {
             return true;
-            } else { return false, error: "Not Equal" }
+            } else { return false; error: "Not Equal" }
         },
         notToBe: function(actualValue) {
             if (expectedValue !== actualValue) {
                 return true;
-            } else { return false, error: "Equal"; }
+            } else { return false; error: "Equal" }
         }
     }
 };

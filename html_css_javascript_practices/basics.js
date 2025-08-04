@@ -165,3 +165,11 @@ var threeSumClosest = function(nums, target) {
 
     return finalSum;
 };
+
+var argumentsLength = function(...args) {
+    let i = 0;
+    while(args[i] !== undefined){
+        i++;
+    }
+    return i;
+};
