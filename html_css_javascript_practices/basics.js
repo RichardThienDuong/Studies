@@ -204,3 +204,8 @@ var buildArray = function(nums) {
     }
     return ans;
 };
+
+var theMaximumAchievableX = function(num, t) {
+    return (t*2) + num;
+};
+
