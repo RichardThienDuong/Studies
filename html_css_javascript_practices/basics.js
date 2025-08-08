@@ -196,3 +196,11 @@ var differenceOfSums = function(n, m) {
     
     return num1 - num2;
 };
+
+var buildArray = function(nums) {
+    ans = [];
+    for (let i = 0; i < nums.length; i++) {
+        ans.push(nums[nums[i]]);
+    }
+    return ans;
+};
