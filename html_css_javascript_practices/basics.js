@@ -209,3 +209,8 @@ var theMaximumAchievableX = function(num, t) {
     return (t*2) + num;
 };
 
+var getConcatenation = function(nums) {
+    return [...nums, ...nums];
+};
+
+
