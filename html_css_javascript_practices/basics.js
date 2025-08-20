@@ -217,3 +217,53 @@ var convertTemperature = function(celsius) {
     return [(celsius + 273.15), (celsius * 1.80 + 32)];
 };
 
+var convert = function(s, numRows) { // my work 
+    let rows = [];
+    if (s.length < numRows || numRows == 1) {
+        return s;
+    }
+    for(let i = 0; i < numRows; i++){
+        rows.push(s[i]);
+    }
+    let result = "";
+    let zigzagDirection = false;
+    let currRow = numRows-2;
+    for(let i = numRows; i < s.length; i++) {
+        console.log(rows);
+        rows[currRow] = rows[currRow] + s[i];
+        if (zigzagDirection && currRow != numRows - 1){
+            currRow++;
+        } else if (zigzagDirection && currRow == numRows - 1){
+            zigzagDirection = false;
+            currRow--;
+        } else if (zigzagDirection == false && currRow != 0){
+            currRow--;
+        } else {
+            zigzagDirection = true;
+            currRow++;
+        }
+    }
+    for(let i = 0; i < numRows; i++) {
+        result = result + rows[i];
+    }
+    return result;
+};
+
+var convert = function(s, numRows) { // other's work
+  if (numRows === 1) return s;
+
+  const resultArray = Array(numRows).fill("");
+  let rowCounter = 0;
+  let isInverse = false;
+
+  for (const char of s) {
+    resultArray[rowCounter] += char;
+
+    if (rowCounter === 0) isInverse = false;
+    else if (rowCounter === numRows - 1) isInverse = true;
+
+    rowCounter += isInverse ? -1 : 1;
+  }
+
+  return resultArray.join("");
+};
