@@ -267,3 +267,24 @@ var convert = function(s, numRows) { // other's work
 
   return resultArray.join("");
 };
+
+var intToRoman = function(num) {
+    let roNum = "";
+    while ( num != 0 ) {
+        if (num - 1000 >= 0) { num = num - 1000; roNum += "M"}
+        else if (num - 900 >= 0) { num = num - 900; roNum += "CM"}
+        else if (num - 500 >= 0) { num = num - 500; roNum += "D"}
+        else if (num - 400 >= 0) { num = num - 400; roNum += "CD"}
+        else if (num - 100 >= 0) { num = num - 100; roNum += "C"}
+        else if (num - 90 >= 0) { num = num - 90; roNum += "XC"}
+        else if (num - 50 >= 0) { num = num - 50; roNum += "L"}
+        else if (num - 40 >= 0) { num = num - 40; roNum += "XL"}
+        else if (num - 10 >= 0) { num = num - 10; roNum += "X"}
+        else if (num - 9 >= 0) { num = num - 9; roNum += "IX"}
+        else if (num - 5 >= 0) { num = num - 5; roNum += "V"}
+        else if (num - 4 >= 0) { num = num - 4; roNum += "IV"}
+        else { num--; roNum += "I"}
+    }
+    return roNum;
+};
+
