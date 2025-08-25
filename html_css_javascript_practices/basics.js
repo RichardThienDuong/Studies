@@ -288,3 +288,23 @@ var intToRoman = function(num) {
     return roNum;
 };
 
+var strStr = function(haystack, needle) {
+    if(haystack.length < needle.length){
+        return -1;
+    }
+    for (let i = 0; i < haystack.length; i++){
+        if (haystack.length - i < needle.length){
+            return -1;
+        } else if (haystack[i] === needle[0]){
+            if (haystack.slice(i, (i+needle.length)) === needle){
+                return i;
+            }
+        }
+
+    }
+    return -1;
+};
+
+var strStr = function(haystack, needle) { // other's work  bruhh
+    return haystack.indexOf(needle)
+};
