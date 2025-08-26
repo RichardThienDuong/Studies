@@ -308,3 +308,20 @@ var strStr = function(haystack, needle) {
 var strStr = function(haystack, needle) { // other's work  bruhh
     return haystack.indexOf(needle)
 };
+
+var lengthOfLastWord = function(s) { // my work and best in runtime !!!! 
+    let i = s.length - 1;
+    while ( i != -1 ) {
+        i--;
+        if (s[i] == ' ' && /[a-z]/i.test( s[i+1])) {
+            break;
+        }
+    }
+    i++;
+    let count = 0;
+    while ( s[i] != ' ' && i != s.length ) {
+        count++;
+        i++;
+    }
+    return count;
+};
