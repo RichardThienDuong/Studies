@@ -100,3 +100,44 @@ var expect = function(expectedValue) {
         }
     }
 };
+
+var sortedSquares = function(nums) {
+    function squareNums(arr) {
+        return arr.map(x => x*x);
+    }
+
+    function quickSort(arr, low, high){
+        if (low < high) {
+            const pi = partition(arr, low, high);
+            console.log("PI: ", pi);
+            quickSort(arr, low, pi-1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    function partition(arr, low, high) {
+        const pivot = arr[high];
+        let i = low - 1;
+        console.log("Before: ", low, high, pivot, i, arr);
+        for (let j=low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+        }
+        
+        [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
+        console.log("After: ", low, high, pivot, i, arr);
+        console.log("---------------");
+        return i + 1;
+    }
+
+    const newNums = squareNums(nums);
+    quickSort(newNums, 0, nums.length - 1);
+    return newNums;
+};
+
+nums = [-4,-1,0,3,10];
+console.log("Final: ", sortedSquares(nums));
+
+
