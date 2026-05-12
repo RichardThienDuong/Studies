@@ -3,10 +3,6 @@
 #include <bits/stdc++.h> // Include all standard C++ libraries, useful in competitive programming but not recommended for production code
 using namespace std;  // so you don't have to type std:: before every standard library function
 
-// compile file first : g++ -o cppBasics cppBasics.cpp 
-// to run file : ./cppBasics.exe 
-// to compile and run in one step : g++ -o cppBasics cppBasics.cpp && ./cppBasics.exe
-
 void helloWorld() {
     cout << "Hello, World" << "\n"; // cout is used for output
     cout << "Hey Hisuby" << endl; // "\n" or endl for line breaks
@@ -38,8 +34,90 @@ void myfirstString() {
     cout << s << endl; // prints the modified string "hello, World"
 }
 
+void firstIfStatement() {
+    int x = 10;
+    if (x > 5) {
+        cout << "x is greater than 5" << endl;
+    } else {
+        cout << "x is not greater than 5" << endl;
+    }
+}
+
+void ifElseStatement() {
+    int x = 'c';
+    if (x == 'a') {
+        cout << "x is a" << endl;
+    } else if (x == 'b') {
+        cout << "x is b" << endl;
+    } else if (x == 'c') {
+        cout << "x is c" << endl;
+    } else {
+        cout << "x is not a, b, or c" << endl;
+    }
+}
+
+void switchStatement() {
+    char grade = 'B';
+    switch (grade) {
+        case 'A':
+            cout << "Excellent!" << endl;
+            break; // break is necessary to prevent fall-through
+        case 'B':
+            cout << "Good job!" << endl;
+            break;
+        case 'C':
+            cout << "You can do better." << endl;
+            break;
+        case 'D':
+            cout << "Needs improvement." << endl;
+            break;
+        case 'F':
+            cout << "Failing grade." << endl;
+            break;
+        default:
+            cout << "Invalid grade." << endl;
+    }
+}
+
+void firstForLoop() {
+    for (int i = 0; i < 10; i++) {
+        cout << i << " "; // prints numbers from 0 to 9
+    }
+}
+
+void nestedForLoop() {
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= 3; j++) {
+            cout << "(" << i << ", " << j << ") "; // prints pairs of (i, j)
+        }
+        cout << endl; // new line after each row
+    }
+}
+
+void whileLoop() {
+    int i = 0;
+    while (i < 5) {
+        cout << i << " "; // prints numbers from 0 to 4
+        i++;
+    }
+}
+
+void firstFunctionPassByValue(int a) {
+    a = a + 10; // modifies the local copy of a, does not affect the original variable passed to the function
+    cout << "Value of a inside function: " << a << endl;
+}
+
+void firstFunctionPassByReference(int &a) {
+    a = a + 10; // modifies the original variable passed to the function because it's passed by reference
+    cout << "Value of a inside function: " << a << endl;
+}
+
+
 
 int main() {
 
     return 0;
 }
+
+// Compile = g++ filename.cpp -o outputname
+// Run = ./outputname
