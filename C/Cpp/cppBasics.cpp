@@ -112,12 +112,30 @@ void firstFunctionPassByReference(int &a) {
     cout << "Value of a inside function: " << a << endl;
 }
 
+void rectangularStarPattern(int n) {
+    for (int i = 0; i < n; i++) { // prints n number of lines 
+        for (int i = 0; i < n; i++) { // prints n number of '*'
+            cout << "* "; 
+        }
+        cout << endl; // makes new line 
+    }
+}
 
+void rightAngledTrianglePattern(int n){
+    for ( int i = 1; i < ( n + 1 ); i++ ) { // prints n number of rows 
+        for ( int j = 0; j < i; j++ ) { // prints i numbers of "* " 
+            cout << "* ";
+        }
+        cout << endl; // makes new line
+    }
+}
 
 int main() {
-
+    rightAngledTrianglePattern(10);
     return 0;
 }
 
 // Compile = g++ filename.cpp -o outputname
 // Run = ./outputname
+
+// while DSA : Ctrl + , to go to settings -> type "inline sugguestions" in search bar -> look for "Editor > Inline Suggest: Enabled" -> uncheck/check the box. 
