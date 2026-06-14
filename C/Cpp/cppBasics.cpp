@@ -130,8 +130,31 @@ void rightAngledTrianglePattern(int n){
     }
 }
 
+void rightAngledTriangleCountingNumberedPattern(int n){
+    if ( n < 1 ){
+        cout << "input is not a valid value";
+        return;
+    }
+    for ( int i = 1; i < (n + 1); i++ ){ // prints n number of lines 
+        for ( int j = 1; j < i; j++ ){ // prints i number of numbers 
+            cout << j;
+        }
+        cout << endl;
+    }
+
+}
+
+void rightAngledTriangleNumberedPattern(int n){
+    for ( int i = 1; i < ( n + 1 ); i++ ) { // prints n number of rows
+        for ( int j = 0; j < i; j++ ) { // prints i numbers of i value
+            cout << i;
+        }
+        cout << endl; // makes new line
+    }
+}
+
 int main() {
-    rightAngledTrianglePattern(10);
+    rightAngledTriangleCountingNumberedPattern(10);
     return 0;
 }
 
