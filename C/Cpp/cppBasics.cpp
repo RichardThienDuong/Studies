@@ -153,8 +153,26 @@ void rightAngledTriangleNumberedPattern(int n){
     }
 }
 
+void reverseRightTriangleStars(int n){
+    for ( int i = (n + 1); i > 1; i-- ) { // prints n number of rows 
+        for ( int j = i; j > 1; j-- ) { // prints n stars counting down
+            cout << "*";
+        }
+        cout << endl; // makes new line 
+    }
+}
+
+void reverseRightTriangleNums(int n){
+    for ( int i = n; i > 0; i-- ) {
+        for ( int j = 1; j < (i + 1); j++ ) {
+            cout << j;
+        }
+        cout << endl; 
+    }
+}
+
 int main() {
-    rightAngledTriangleCountingNumberedPattern(10);
+    reverseRightTriangleNums(5);
     return 0;
 }
 
