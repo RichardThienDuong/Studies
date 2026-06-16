@@ -171,8 +171,25 @@ void reverseRightTriangleNums(int n){
     }
 }
 
+void isoTriangleStars(int n){
+    for ( int i = n; i > 0; i-- ){ // prints n number of rows 
+        std::string space(i, ' ');
+        std::string stars((n - i), '*');
+        cout << space + stars + '*' + stars << endl;
+    }
+    
+}
+
+void reverseIsoTriangleStars(int n){
+    for ( int i = 0; i < n; i++ ){
+        std::string space(i, ' ');
+        std::string stars((n - i - 1), '*');
+        cout << space + stars + '*' + stars << endl;
+    }
+}
+
 int main() {
-    reverseRightTriangleNums(5);
+    reverseIsoTriangleStars(5);
     return 0;
 }
 
